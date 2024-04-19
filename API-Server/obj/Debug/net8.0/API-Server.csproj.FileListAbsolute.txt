@@ -32,3 +32,4 @@ D:\Program\Project\API-Server\API-Server\obj\Debug\net8.0\API-Server.genruntimec
 D:\Program\Project\API-Server\API-Server\obj\Debug\net8.0\ref\API-Server.dll
 D:\Program\Project\API-Server\API-Server\bin\Debug\net8.0\Npgsql.dll
 D:\Program\Project\API-Server\API-Server\obj\Debug\net8.0\API-Server.sourcelink.json
+D:\Program\Project\API-Server\API-Server\bin\Debug\net8.0\Microsoft.AspNetCore.OpenApi.dll
