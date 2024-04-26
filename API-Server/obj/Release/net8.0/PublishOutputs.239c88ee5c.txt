@@ -1,0 +1,14 @@
+D:\Program\Project\API-Server\API-Server\obj\Release\net8.0\PubTmp\Out\API-Server.exe
+D:\Program\Project\API-Server\API-Server\obj\Release\net8.0\PubTmp\Out\appsettings.Development.json
+D:\Program\Project\API-Server\API-Server\obj\Release\net8.0\PubTmp\Out\appsettings.json
+D:\Program\Project\API-Server\API-Server\obj\Release\net8.0\PubTmp\Out\libman.json
+D:\Program\Project\API-Server\API-Server\obj\Release\net8.0\PubTmp\Out\API-Server.dll
+D:\Program\Project\API-Server\API-Server\obj\Release\net8.0\PubTmp\Out\API-Server.deps.json
+D:\Program\Project\API-Server\API-Server\obj\Release\net8.0\PubTmp\Out\API-Server.runtimeconfig.json
+D:\Program\Project\API-Server\API-Server\obj\Release\net8.0\PubTmp\Out\API-Server.pdb
+D:\Program\Project\API-Server\API-Server\obj\Release\net8.0\PubTmp\Out\Microsoft.AspNetCore.OpenApi.dll
+D:\Program\Project\API-Server\API-Server\obj\Release\net8.0\PubTmp\Out\Microsoft.OpenApi.dll
+D:\Program\Project\API-Server\API-Server\obj\Release\net8.0\PubTmp\Out\Npgsql.dll
+D:\Program\Project\API-Server\API-Server\obj\Release\net8.0\PubTmp\Out\Swashbuckle.AspNetCore.Swagger.dll
+D:\Program\Project\API-Server\API-Server\obj\Release\net8.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\Program\Project\API-Server\API-Server\obj\Release\net8.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerUI.dll

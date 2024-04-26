@@ -8,7 +8,7 @@ namespace API_Server.Models
 {
     public class UsersModel
     {
-        private static string connectionString = "Server=localhost;Port=5432; Database=test; User Id = postgres; Password = 1234";
+        private static string connectionString = "Server=localhost;Port=5432; Database=farms; User Id = postgres; Password = 1234";
         public static List<Users> AllUsers = new List<Users>();
 
 
@@ -24,7 +24,7 @@ namespace API_Server.Models
                         NpgsqlCommand command = new NpgsqlCommand();
                         command.Connection = sqlConnection;
                         command.CommandType = CommandType.Text;
-                        command.CommandText = "SELECT * FROM todolist.users_data";
+                        command.CommandText = "SELECT * FROM db_project.users";
                         NpgsqlDataReader reader = command.ExecuteReader();
 
                         if (reader.HasRows)
@@ -42,10 +42,12 @@ namespace API_Server.Models
                                 AllUsers.Add(
                                         new Users()
                                         {
-                                            Id = Convert.ToInt32(row.ItemArray[3]),
-                                            UserName = (string)row.ItemArray[2],
-                                            Password = (string)row.ItemArray[1],
-                                            Email = (string)row.ItemArray[0]
+                                            Id = Convert.ToInt32(row.ItemArray[0]),
+                                            FirstName = (string)row.ItemArray[1],
+                                            LastName = (string)row.ItemArray[2],
+                                            MiddleName = (string)row.ItemArray[3],
+                                            Email = (string)row.ItemArray[4],
+                                            Password = (string)row.ItemArray[5]
                                         }
                                     );
 
@@ -62,10 +64,14 @@ namespace API_Server.Models
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Ошибка номер 228");
                 Console.WriteLine(ex.Message);
             }
             return AllUsers;
         }
+
+        //public static string WriteUserToDB(Users newUser)
+        //{
+
+        //}
     }
 }
