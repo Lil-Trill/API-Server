@@ -3,71 +3,50 @@ using System.Data;
 using Npgsql;
 using System.ComponentModel.DataAnnotations;
 using API_Server.Entities;
+using app_example_net_core.Models;
 
 namespace API_Server.Models
 {
     public class UsersModel
     {
-        private static string connectionString = "Server=localhost;Port=5432; Database=farms; User Id = postgres; Password = 1234";
         public static List<Users> AllUsers = new List<Users>();
 
 
         public static List<Users> GetAllUsers()
         {
-            try
+            string querySelectAll= "SELECT * FROM db_project.users";
+
+            var dateTable = DBModel.Connection(querySelectAll);
+
+            if(dateTable != null)
             {
-                using (NpgsqlConnection sqlConnection = new NpgsqlConnection(connectionString))
+                foreach(DataRow user in dateTable.Rows) 
                 {
-                    sqlConnection.Open();
-                    if (sqlConnection.State == ConnectionState.Open)
-                    {
-                        NpgsqlCommand command = new NpgsqlCommand();
-                        command.Connection = sqlConnection;
-                        command.CommandType = CommandType.Text;
-                        command.CommandText = "SELECT * FROM db_project.users";
-                        NpgsqlDataReader reader = command.ExecuteReader();
-
-                        if (reader.HasRows)
+                    AllUsers.Add(
+                        new Users()
                         {
-                            DataTable dt = new DataTable();
-                            dt.Load(reader);
-
-                            foreach (DataRow row in dt.Rows)
-                            {
-                                //foreach (var item in row.ItemArray)
-                                //{
-                                //    Console.Write(item + "\t"); // Выводим значение каждой ячейки в строке
-                                //}
-                                //Console.WriteLine(); // Переходим на новую строку после каждой строки
-                                AllUsers.Add(
-                                        new Users()
-                                        {
-                                            Id = Convert.ToInt32(row.ItemArray[0]),
-                                            FirstName = (string)row.ItemArray[1],
-                                            LastName = (string)row.ItemArray[2],
-                                            MiddleName = (string)row.ItemArray[3],
-                                            Email = (string)row.ItemArray[4],
-                                            Password = (string)row.ItemArray[5]
-                                        }
-                                    );
-
-                            }
+                            Id = Convert.ToInt32(user.ItemArray[0]),
+                            FirstName = (string)user.ItemArray[1],
+                            LastName = (string)user.ItemArray[2],
+                            MiddleName = (string)user.ItemArray[3],
+                            Email = (string)user.ItemArray[4],
+                            Password = (string)user.ItemArray[5]
                         }
-                        command.Dispose();
-                    }
-                    else
-                    {
-                        Console.WriteLine("Состояние подключения: " + sqlConnection.State);
-                    }
-
+                      );
                 }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
             }
             return AllUsers;
         }
+
+        //public static bool AddUserToDB(Users newUser)
+        //{
+        //    string queryAddUser = $"INSERT INTO db_project.users (fname, lname, midname, email, password) VALUES('{newUser.FirstName}'::text,'{newUser.LastName}'::text,'{newUser.MiddleName}'::text,'{newUser.Email}'::text,'{newUser.Password}'::text) returning user_id;";
+        //    var result = DBModel.Connection(queryAddUser);
+
+        //    if(result)
+
+        //    return false;
+        //}
 
         //public static string WriteUserToDB(Users newUser)
         //{

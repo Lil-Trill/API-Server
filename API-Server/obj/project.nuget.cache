@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "6IWa8pHw/82Fy9IVU3xOgO1CoChB1d6KKGcmsXJk87hHwvjdIifSD++C/z9YakQjj+hDSIYADyrBYzy95+/scA==",
+  "dgSpecHash": "fGyDyyWOs4Tup8BeRbwXfLKUF5pScNjp0LU2emWasb4IEmwvpI5TcpZYTXLpL4Al64y+THoegDjDgvXzEeDMRA==",
   "success": true,
   "projectFilePath": "D:\\Program\\Project\\API-Server\\API-Server\\API-Server.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\danil\\.nuget\\packages\\ilmerge\\3.0.40\\ilmerge.3.0.40.nupkg.sha512",
     "C:\\Users\\danil\\.nuget\\packages\\microsoft.aspnetcore.openapi\\8.0.4\\microsoft.aspnetcore.openapi.8.0.4.nupkg.sha512",
     "C:\\Users\\danil\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\danil\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",

@@ -2,6 +2,12 @@
   "version": 3,
   "targets": {
     "net8.0": {
+      "ILMerge/3.0.40": {
+        "type": "package",
+        "build": {
+          "build/ILMerge.props": {}
+        }
+      },
       "Microsoft.AspNetCore.OpenApi/8.0.4": {
         "type": "package",
         "dependencies": {
@@ -169,6 +175,22 @@
     }
   },
   "libraries": {
+    "ILMerge/3.0.40": {
+      "sha512": "L6nrRiBmIWp2rPMYFSzsHDYL4eTd8/WyiQ5DSBGonGdngutZ6js7dsCLPSgSwdbZ7j3n7210dMTHwuHmfQHEYQ==",
+      "type": "package",
+      "path": "ilmerge/3.0.40",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/ILMerge.props",
+        "docs/ilmerge-manual.md",
+        "ilmerge.3.0.40.nupkg.sha512",
+        "ilmerge.nuspec",
+        "tools/net452/ILMerge.exe",
+        "tools/net452/System.Compiler.dll"
+      ]
+    },
     "Microsoft.AspNetCore.OpenApi/8.0.4": {
       "sha512": "TFiXbP0tqRgJKcpiCSSp79q6QaiF8gqRhZgrU48FQajhVkiwHSp1O1b1hkYC4Ehl4clbk3pHwdfwN9mRtDAFbQ==",
       "type": "package",
@@ -725,7 +747,8 @@
       "Microsoft.AspNetCore.OpenApi >= 8.0.4",
       "Microsoft.VisualStudio.Azure.Containers.Tools.Targets >= 1.19.6",
       "Npgsql >= 8.0.2",
-      "Swashbuckle.AspNetCore >= 6.4.0"
+      "Swashbuckle.AspNetCore >= 6.4.0",
+      "ilmerge >= 3.0.40"
     ]
   },
   "packageFolders": {
@@ -794,6 +817,10 @@
           "Swashbuckle.AspNetCore": {
             "target": "Package",
             "version": "[6.4.0, )"
+          },
+          "ilmerge": {
+            "target": "Package",
+            "version": "[3.0.40, )"
           }
         },
         "imports": [

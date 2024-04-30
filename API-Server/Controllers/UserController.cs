@@ -68,22 +68,29 @@ namespace API_Server.Controllers
             return CreatedAtAction(nameof(Get), new { id = user.Id }, user);
         }
 
-        //[HttpPost("RegistrationUser")]
-        //public IActionResult Post(string firstName, string lastName, string midName, string email, string password)
-        //{
-        //    var newUser = new Users();
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return BadRequest(ModelState);
-        //    }
-        //    newUser.FirstName = firstName;
-        //    newUser.LastName = lastName;
-        //    newUser.MiddleName = midName;
-        //    newUser.Email = email;
-        //    newUser.Password = password;
+        [HttpPost("RegistrationUser")]
+        public IActionResult Post(string firstName, string lastName, string midName, string email, string password)
+        {
+            var newUser = new Users();
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            newUser.FirstName = firstName;
+            newUser.LastName = lastName;
+            newUser.MiddleName = midName;
+            newUser.Email = email;
+            newUser.Password = password;
 
-        //    return CreatedAtAction(nameof(Get), new { id = user.Id }, user);
-        //}
+            //var result = UsersModel.AddUserToDB(newUser);
+
+            //if(result)
+            //{
+            //    return Ok("user added");
+            //}
+            //else 
+            return StatusCode(500, "Failed to add user to the database");
+        }
 
         [HttpPost]
         public IActionResult PostBody([FromBody] Users user) => Post(user);
