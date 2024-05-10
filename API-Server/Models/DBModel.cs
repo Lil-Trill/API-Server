@@ -1,15 +1,20 @@
-﻿using API_Server.Entities;
+﻿
+using API_Server.Entities;
 using Npgsql;
 using System.Data;
+
+
 
 namespace app_example_net_core.Models
 {
     public class DBModel
     {
-        private static string connectionString = "Server=localhost;Port=5432; Database=farms; User Id = postgres; Password = 1234";
+        private string connectionString = "Server=localhost;Port=5432; Database=farms; User Id = postgres; Password = 1234";
 
+        public DataTable? dataTable = new DataTable();
 
-        public static DataTable Connection(string SQL)
+        
+        public bool Connection(string SQL)
         {
             try
             {
@@ -26,9 +31,8 @@ namespace app_example_net_core.Models
 
                         if (reader.HasRows)
                         {
-                            DataTable dt = new DataTable();
-                            dt.Load(reader);
-                            return dt;
+                            dataTable.Load(reader);
+                            return true;
                         }
                         command.Dispose();
                     }
@@ -36,14 +40,14 @@ namespace app_example_net_core.Models
                     {
                         Console.WriteLine("Состояние подключения: " + sqlConnection.State);
                     }
-
+                    sqlConnection.Close();
                 }
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
-            return null;
+            return false;
         }
     }
 }
