@@ -13,8 +13,8 @@ namespace API_Server.Models
         public List<Users> AllUsers = new List<Users>();
         DBModel db = new DBModel();
         public Users? userByEmail = new Users();
-        
-        
+
+
         public void GetAllUsers()
         {
             string querySelectAll = "SELECT * FROM db_project.users";
@@ -36,7 +36,7 @@ namespace API_Server.Models
                             MiddleName = Convert.ToString(user.ItemArray[3]),
                             Email = Convert.ToString(user.ItemArray[4]),
                             Password = Convert.ToString(user.ItemArray[5])
-                        }
+                }
                       );
                 }
             }
@@ -44,7 +44,7 @@ namespace API_Server.Models
 
         public bool GetUserByEmail(string email)
         {
-            string querySelectEmail = $"SELECT * FROM db_project.users WHERE email = '{email}'";
+            string querySelectEmail = $"SELECT * FROM db_project.users LEFT JOIN db_project.users_data USING(user_id) WHERE email = '{email}' ORDER BY user_id ASC ";
             db.Connection(querySelectEmail);
             var result = db.dataTable;
 
@@ -58,6 +58,9 @@ namespace API_Server.Models
                     userByEmail.MiddleName = Convert.ToString(user.ItemArray[3]);
                     userByEmail.Email = Convert.ToString(user.ItemArray[4]);
                     userByEmail.Password = Convert.ToString(user.ItemArray[5]);
+                    userByEmail.DataID = Convert.ToInt32(user.ItemArray[7]);
+                    userByEmail.FarmAddress = Convert.ToString(user.ItemArray[8]);
+                    userByEmail.PhoneNumber = Convert.ToString(user.ItemArray[9]);
                 }
                 return true;
             }
@@ -76,9 +79,9 @@ namespace API_Server.Models
             else return "произошла ошибка";
         }
 
-        public string AddUserDataToDB(UsersData newUserData)
+        public string AddUserDataToDB(Users newUserData)
         {
-            var request = db.Connection($"INSERT INTO db_project.users_data (farm_address, user_id,phone_number) VALUES ('{newUserData.FarmAddress}'::text, '{newUserData.UserID}'::bigint, '{newUserData.PhoneNumber}'::text) returning user_data_id;");
+            var request = db.Connection($"INSERT INTO db_project.users_data (farm_address, user_id,phone_number) VALUES ('{newUserData.FarmAddress}'::text, '{newUserData.Id}'::bigint, '{newUserData.PhoneNumber}'::text) returning user_data_id;");
             if (request)
             {
                 return "запрос выполнен успешно, информация о пользователе добавлена";

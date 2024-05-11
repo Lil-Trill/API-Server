@@ -32,9 +32,9 @@ namespace app_example_net_core.Models
                         if (reader.HasRows)
                         {
                             dataTable.Load(reader);
-                            return true;
                         }
                         command.Dispose();
+                        return true;
                     }
                     else
                     {

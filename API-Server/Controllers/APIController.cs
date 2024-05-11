@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Npgsql;
 using System.Data;
 using System.Security.Cryptography.X509Certificates;
+using System.ComponentModel.DataAnnotations;
 
 namespace API_Server.Controllers
 {
@@ -16,8 +17,10 @@ namespace API_Server.Controllers
     [ApiController]
     public class APIController : ControllerBase
     {
-        UsersModel UserModel = new UsersModel();
-        FarmsModel farmModel = new FarmsModel();
+        private UsersModel UserModel = new UsersModel();
+        private FarmsModel farmModel = new FarmsModel();
+        private static Users storedUser = new Users();
+        
         //public static List<Users> usersList = UsersModel.GetAllUsers();
         DBModel dbModel = new DBModel();
 
@@ -36,9 +39,11 @@ namespace API_Server.Controllers
         public IActionResult Get(string email)
         {
             bool result = UserModel.GetUserByEmail(email);
+
             if (result)
             {
-                return Ok(UserModel.userByEmail);
+                storedUser = UserModel.userByEmail;
+                return Ok(storedUser);
             }
             return BadRequest();
         }
@@ -94,26 +99,20 @@ namespace API_Server.Controllers
 
             var result = UserModel.AddUserToDB(newUser);
 
-            //var result = UsersModel.AddUserToDB(newUser);
-
-            //if(result)
-            //{
-            //    return Ok("user added");
-            //}
-            //else 
+            
             return Ok(result);
         }
 
         [HttpPost("insertUserData")]
         public IActionResult Post(string farmAddress, int userID, string phoneNumber)
         {
-            var newUserData = new UsersData();
+            var newUserData = new Users();
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
             newUserData.FarmAddress = farmAddress;
-            newUserData.UserID = userID;
+            newUserData.Id = userID;
             newUserData.PhoneNumber = phoneNumber;
 
             var result = UserModel.AddUserDataToDB(newUserData);
@@ -128,23 +127,65 @@ namespace API_Server.Controllers
             return Ok(result);
         }
 
-        //[HttpPost("insertFarms")]
-        //public IActionResult Post(int idUser,string ipAddress)
-        //{
-        //    var checkNextID = dbModel.Connection("SELECT farm_id FROM db_project.farms ORDER BY farm_id DESC LIMIT 1");
+        [HttpPost("insertFarms")]
+        public IActionResult Post(int idUser, string ipAddress)
+        {
+            var checkNextID = dbModel.Connection("SELECT farm_id FROM db_project.farms ORDER BY farm_id DESC LIMIT 1");
+            int nextIDFarm = 0;
+            if (checkNextID)
+            {
+                nextIDFarm  = Convert.ToInt32(dbModel.dataTable.Rows[0][0]) + 1;
+            }
+            else return StatusCode(500, "не выолнен SQL код для инициализации ID");
 
-        //    var newFarm = new Farms();
+            var newFarm = new Farms();
+
+            newFarm.IPAdress = ipAddress;
+            newFarm.Id = nextIDFarm;
+            var result = farmModel.AddFarms(newFarm, idUser);
+            return Ok(result);
+        }
+
+
+        [HttpPost("insertPlants")]
+        public IActionResult Post(string plantName, int height, DateTime datePlanted, int numberSprouts, int farmID, string status)
+        {
+            var newPlant = new Plants();
+
+            newPlant.Name = plantName;
+            newPlant.Height = height;
+            newPlant.DatePlanted = datePlanted;
+            newPlant.NumberSprouts = numberSprouts;
+            newPlant.FarmID = farmID;
+            newPlant.Status = status;
+
+
+            var isCreate = farmModel.AddPlants(newPlant);
+            if(isCreate) return StatusCode(200, "Растение добавлено в таблицу");
+
+            return StatusCode(500, "Ошибка!");
+        }
+
+
+        [HttpPut("updateUser")]
+        public IActionResult Put(string lname, string fname, string midname, string email, string password, string farmAddress, string phone_number)
+        {
+            if(storedUser.Id == 0) return StatusCode(400, "Нет пользователся");
+
+            return Ok(storedUser);
+
             
-        //    newFarm.IPAdress = ipAddress;
-        //    newFarm.Id = nextIdFarm;
-        //    var result = farmModel.AddFarms(newFarm,idUser);
-        //    return Ok(nextIdFarm);
-        //}
-
+        }
 
         //[HttpPost]
         //public IActionResult PostBody([FromBody] Users user) => Post(user);
 
+
+        //[HttpPut]
+        //public IActionResult Put()
+        //{
+        //    if (storedUser == null) return BadRequest();
+        //}
 
         ////Изменение полей пользователя
         //[HttpPut]
@@ -165,22 +206,6 @@ namespace API_Server.Controllers
         //    return Ok(storedUser);
         //}
 
-
-        //[HttpPost("arduino")]
-        //public IActionResult Post(float temperature, float humidity)
-        //{
-
-
-        //    return Ok();
-        //}
-
-        //[Route("allUsers")]
-        //[HttpGet]
-        //public ActionResult<IEnumerable<Users>> Get()
-        //{
-        //    users.GetAllUsers();
-
-        //    return Ok(users.AllUsers);
-        //}
+       
     }
 }
