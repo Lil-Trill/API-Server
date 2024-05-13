@@ -42,10 +42,11 @@ namespace API_Server.Models
             }
         }
 
-        public bool GetUserByEmail(string email)
+        public string GetUserByEmail(string email)
         {
             string querySelectEmail = $"SELECT * FROM db_project.users LEFT JOIN db_project.users_data USING(user_id) WHERE email = '{email}' ORDER BY user_id ASC ";
-            db.Connection(querySelectEmail);
+            var checkConnect = db.Connection(querySelectEmail);
+            if (!checkConnect) return "Ошибка на стороне сервера";
             var result = db.dataTable;
 
             if (result != null)
@@ -58,13 +59,12 @@ namespace API_Server.Models
                     userByEmail.MiddleName = Convert.ToString(user.ItemArray[3]);
                     userByEmail.Email = Convert.ToString(user.ItemArray[4]);
                     userByEmail.Password = Convert.ToString(user.ItemArray[5]);
-                    userByEmail.DataID = Convert.ToInt32(user.ItemArray[7]);
                     userByEmail.FarmAddress = Convert.ToString(user.ItemArray[8]);
                     userByEmail.PhoneNumber = Convert.ToString(user.ItemArray[9]);
                 }
-                return true;
+                if(userByEmail.Id != 0) return "Пользователь найден";
             }
-            return false;
+            return "Пользователь с таким email не найден";
         }
 
 
@@ -87,6 +87,14 @@ namespace API_Server.Models
                 return "запрос выполнен успешно, информация о пользователе добавлена";
             }
             else return "произошла ошибка";
+        }
+
+        public bool EditUser(Users changesUser)
+        {
+            var request = db.Connection($"UPDATE db_project.users SET \r\n fname = CASE WHEN '{changesUser.FirstName}' <> '' THEN '{changesUser.FirstName}' ELSE fname END,\r\n    lname = CASE WHEN '{changesUser.LastName}' <> '' THEN '{changesUser.LastName}' ELSE lname END,\r\n    midname = CASE WHEN '{changesUser.MiddleName}' <> '' THEN '{changesUser.MiddleName}' ELSE midname END,\r\n    email = CASE WHEN '{changesUser.Email}' <> '' THEN '{changesUser.Email}' ELSE email END,\r\n    password = CASE WHEN '{changesUser.Password}' <> '' THEN '{changesUser.Password}' ELSE password END\r\nWHERE user_id = {changesUser.Id};" +
+                $"\r\n UPDATE db_project.users_data\r\n SET \r\n farm_address = CASE WHEN '{changesUser.FarmAddress}' <> '' THEN '{changesUser.FarmAddress}' ELSE farm_address END,\r\n phone_number = CASE WHEN '{changesUser.PhoneNumber}' <> '' THEN '{changesUser.PhoneNumber}' ELSE phone_number END\r\n WHERE user_id = {changesUser.Id};");
+
+            return request;
         }
     }
 }

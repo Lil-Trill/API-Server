@@ -38,14 +38,16 @@ namespace API_Server.Controllers
         [HttpGet("getUsersByEmail{email}")]
         public IActionResult Get(string email)
         {
-            bool result = UserModel.GetUserByEmail(email);
+            var result = UserModel.GetUserByEmail(email);
 
-            if (result)
+            if (UserModel.userByEmail.Id != 0)
             {
                 storedUser = UserModel.userByEmail;
                 return Ok(storedUser);
             }
-            return BadRequest();
+
+            storedUser.Id = 0;
+            return BadRequest(result);
         }
 
 
@@ -57,31 +59,7 @@ namespace API_Server.Controllers
         //    return Ok(new { Messsage = "Deleted successfully" });
         //}
 
-        ////Индетификатор
-        //private int NextUserId => usersList.Count() == 0 ? 1 : usersList.Max(x => x.Id) + 1;
-
-        //[HttpGet("GetNextUserId")]
-        //public int GetNextUserId()
-        //{
-
-        //    return NextUserId;
-        //}
-
-        ////добавление пользователя
-
-        //[HttpPost("AddUser")]
-        //public IActionResult Post(Users user)
-        //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return BadRequest(ModelState);
-        //    }
-
-        //    user.Id = NextUserId;
-        //    usersList.Add(user);
-
-        //    return CreatedAtAction(nameof(Get), new { id = user.Id }, user);
-        //}
+       
 
         [HttpPost("registrationUser")]
         public IActionResult Post(string firstName, string lastName, string midName, string email, string password)
@@ -117,13 +95,6 @@ namespace API_Server.Controllers
 
             var result = UserModel.AddUserDataToDB(newUserData);
 
-            //var result = UsersModel.AddUserToDB(newUser);
-
-            //if(result)
-            //{
-            //    return Ok("user added");
-            //}
-            //else 
             return Ok(result);
         }
 
@@ -148,7 +119,7 @@ namespace API_Server.Controllers
 
 
         [HttpPost("insertPlants")]
-        public IActionResult Post(string plantName, int height, DateTime datePlanted, int numberSprouts, int farmID, string status)
+        public IActionResult Post(string plantName, int height, DateTime datePlanted, int numberSprouts, int farmID, string variety, string status = null)
         {
             var newPlant = new Plants();
 
@@ -158,7 +129,7 @@ namespace API_Server.Controllers
             newPlant.NumberSprouts = numberSprouts;
             newPlant.FarmID = farmID;
             newPlant.Status = status;
-
+            newPlant.Variety = variety;
 
             var isCreate = farmModel.AddPlants(newPlant);
             if(isCreate) return StatusCode(200, "Растение добавлено в таблицу");
@@ -166,26 +137,42 @@ namespace API_Server.Controllers
             return StatusCode(500, "Ошибка!");
         }
 
-
-        [HttpPut("updateUser")]
-        public IActionResult Put(string lname, string fname, string midname, string email, string password, string farmAddress, string phone_number)
+        [HttpPost("insertFertilizer")]
+        public IActionResult Post(string nameFertilizer, int volumeUse, int plantID, DateTime curDate)
         {
-            if(storedUser.Id == 0) return StatusCode(400, "Нет пользователся");
+            var newFertilizer = new Fertilizers();
+            newFertilizer.NameFertilizers = nameFertilizer;
+            newFertilizer.VolumeUser = volumeUse;
+            newFertilizer.PlantID = plantID;
+            newFertilizer.Currentdate = curDate;
 
-            return Ok(storedUser);
-
-            
+            var result = farmModel.AddFertilizer(newFertilizer);
+            if (result) return Ok(newFertilizer);
+            else return StatusCode(500, "Ошибка!");
         }
 
-        //[HttpPost]
-        //public IActionResult PostBody([FromBody] Users user) => Post(user);
 
+        [HttpPut("updateUser")]
+        public IActionResult Put(string fname = null, string lname = null, string midname = null, string email = null, string password = null, string farmAddress = null, string phoneNumber = null)
+        {
+            if(storedUser.Id == 0) return StatusCode(400, "Нет пользователся");
+            var changesUser = new Users();
+            changesUser.Id = storedUser.Id;
+            changesUser.FirstName = fname;
+            changesUser.LastName = lname;
+            changesUser.MiddleName = midname;
+            changesUser.Email = email;
+            changesUser.Password = password;
+            changesUser.FarmAddress = farmAddress;
+            changesUser.PhoneNumber = phoneNumber;
 
-        //[HttpPut]
-        //public IActionResult Put()
-        //{
-        //    if (storedUser == null) return BadRequest();
-        //}
+            var result = UserModel.EditUser(changesUser);
+            if(result) return Ok(changesUser);
+            else return StatusCode(400, "Что то пошло не так");
+
+        }
+
+       
 
         ////Изменение полей пользователя
         //[HttpPut]
