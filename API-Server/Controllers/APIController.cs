@@ -13,7 +13,7 @@ using System.ComponentModel.DataAnnotations;
 namespace API_Server.Controllers
 {
 
-    [Route("api/users")]
+    [Route("api/")]
     [ApiController]
     public class APIController : ControllerBase
     {
