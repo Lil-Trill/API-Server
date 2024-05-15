@@ -9,7 +9,7 @@ namespace app_example_net_core.Models
 {
     public class DBModel
     {
-        private string connectionString = "Server=192.168.0.4;Port=5432; Database=default_db; User Id = postgres; Password = 1234";
+        private string connectionString = "Server=localhost; Port=5432; Database=farms; User Id = postgres; Password = 1234";
 
         public DataTable? dataTable = new DataTable();
 
