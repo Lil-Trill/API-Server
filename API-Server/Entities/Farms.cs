@@ -4,6 +4,6 @@
     {
         public int Id { get; set; }
         public string IPAdress { get; set; }     
-        
+        public string FarmAddress { get; set; }
     }
 }

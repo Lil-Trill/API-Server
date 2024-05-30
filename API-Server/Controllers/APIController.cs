@@ -9,6 +9,7 @@ using Npgsql;
 using System.Data;
 using System.Security.Cryptography.X509Certificates;
 using System.ComponentModel.DataAnnotations;
+using System.Diagnostics.Eventing.Reader;
 
 namespace API_Server.Controllers
 {
@@ -19,6 +20,7 @@ namespace API_Server.Controllers
     {
         private UsersModel UserModel = new UsersModel();
         private FarmsModel farmModel = new FarmsModel();
+        private DevicesModel devicesModel = new DevicesModel();
         private static Users storedUser = new Users();
         
         //public static List<Users> usersList = UsersModel.GetAllUsers();
@@ -35,7 +37,7 @@ namespace API_Server.Controllers
 
         //тут осуществляется получения пользователя по IP
         
-        [HttpGet("getUsersByEmail{email}")]
+        [HttpGet("getUsersByEmail")]
         public IActionResult Get(string email)
         {
             var result = UserModel.GetUserByEmail(email);
@@ -51,7 +53,6 @@ namespace API_Server.Controllers
         }
 
 
-
         //[HttpDelete("{id}")]
         //public IActionResult Delete(int id)
         //{
@@ -59,7 +60,7 @@ namespace API_Server.Controllers
         //    return Ok(new { Messsage = "Deleted successfully" });
         //}
 
-       
+
 
         [HttpPost("registrationUser")]
         public IActionResult Post(string firstName, string lastName, string midName, string email, string password)
@@ -82,14 +83,13 @@ namespace API_Server.Controllers
         }
 
         [HttpPost("insertUserData")]
-        public IActionResult Post(string farmAddress, int userID, string phoneNumber)
+        public IActionResult Post(int userID, string phoneNumber)
         {
             var newUserData = new Users();
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-            newUserData.FarmAddress = farmAddress;
             newUserData.Id = userID;
             newUserData.PhoneNumber = phoneNumber;
 
@@ -99,7 +99,7 @@ namespace API_Server.Controllers
         }
 
         [HttpPost("insertFarms")]
-        public IActionResult Post(int idUser, string ipAddress)
+        public IActionResult Post(int idUser, string ipAddress, string farmAddress)
         {
             var checkNextID = dbModel.Connection("SELECT farm_id FROM db_project.farms ORDER BY farm_id DESC LIMIT 1");
             int nextIDFarm = 0;
@@ -113,7 +113,8 @@ namespace API_Server.Controllers
 
             newFarm.IPAdress = ipAddress;
             newFarm.Id = nextIDFarm;
-            var result = farmModel.AddFarms(newFarm, idUser);
+            newFarm.FarmAddress = farmAddress;
+            var result = farmModel.AddFarms(newFarm, idUser, farmAddress);
             return Ok(result);
         }
 
@@ -163,16 +164,24 @@ namespace API_Server.Controllers
             changesUser.MiddleName = midname;
             changesUser.Email = email;
             changesUser.Password = password;
-            changesUser.FarmAddress = farmAddress;
             changesUser.PhoneNumber = phoneNumber;
+            
+            
 
             var result = UserModel.EditUser(changesUser);
-            if(result) return Ok(changesUser);
-            else return StatusCode(400, "Что то пошло не так");
+            if (result && storedUser.DataID == 0) return Ok("все поля кроме полей дополнительной информации были обновлены");
+            if (result) return Ok(changesUser);
+            else return StatusCode(500, "Что то пошло не так");
 
         }
 
        
+
+        //[HttpPut("updatePlant")]
+        //public IActionResult Put()
+        //{
+
+        //}
 
         ////Изменение полей пользователя
         //[HttpPut]
@@ -193,6 +202,6 @@ namespace API_Server.Controllers
         //    return Ok(storedUser);
         //}
 
-       
+
     }
 }

@@ -34,3 +34,4 @@ D:\Program\Project\API-Server\API-Server\bin\Debug\net8.0\Swashbuckle.AspNetCore
 D:\Program\Project\API-Server\API-Server\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 D:\Program\Project\API-Server\API-Server\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 D:\Program\Project\API-Server\API-Server\obj\Debug\net8.0\API-Server.csproj.Up2Date
+D:\Program\Project\API-Server\API-Server\bin\Debug\net8.0\Newtonsoft.Json.dll

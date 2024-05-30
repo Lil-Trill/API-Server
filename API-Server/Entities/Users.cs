@@ -21,6 +21,5 @@ namespace API_Server.Entities
         public string Password { get; set; }
         public int DataID { get; set; }
         public string? PhoneNumber { get; set; }
-        public string? FarmAddress { get; set; }
     }
 }

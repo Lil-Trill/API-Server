@@ -2,8 +2,8 @@
 {
     public class Devices
     {
-        public int ip { get; set; }
-        public int port { get; set; }
-        public string name { get; set; }
+        public int ID { get; set; }
+        public string IP { get; set; }
+        public int FarmID { get; set; }
     }
 }
