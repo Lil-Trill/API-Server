@@ -3,56 +3,52 @@
   "WorkspaceRootPath": "D:\\Program\\Project\\API-Server\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{86D2BB77-E0CC-4C10-8F62-F476D0CF8865}|API-Server\\API-Server.csproj|d:\\program\\project\\api-server\\api-server\\controllers\\farmscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{86D2BB77-E0CC-4C10-8F62-F476D0CF8865}|API-Server\\API-Server.csproj|solutionrelative:api-server\\controllers\\farmscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{86D2BB77-E0CC-4C10-8F62-F476D0CF8865}|API-Server\\API-Server.csproj|d:\\program\\project\\api-server\\api-server\\controllers\\apicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{86D2BB77-E0CC-4C10-8F62-F476D0CF8865}|API-Server\\API-Server.csproj|solutionrelative:api-server\\controllers\\apicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{86D2BB77-E0CC-4C10-8F62-F476D0CF8865}|API-Server\\API-Server.csproj|d:\\program\\project\\api-server\\api-server\\models\\usersmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{86D2BB77-E0CC-4C10-8F62-F476D0CF8865}|API-Server\\API-Server.csproj|solutionrelative:api-server\\models\\usersmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{86D2BB77-E0CC-4C10-8F62-F476D0CF8865}|API-Server\\API-Server.csproj|d:\\program\\project\\api-server\\api-server\\models\\farmsmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{86D2BB77-E0CC-4C10-8F62-F476D0CF8865}|API-Server\\API-Server.csproj|solutionrelative:api-server\\models\\farmsmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{86D2BB77-E0CC-4C10-8F62-F476D0CF8865}|API-Server\\API-Server.csproj|d:\\program\\project\\api-server\\api-server\\entities\\farms.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{86D2BB77-E0CC-4C10-8F62-F476D0CF8865}|API-Server\\API-Server.csproj|solutionrelative:api-server\\entities\\farms.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{86D2BB77-E0CC-4C10-8F62-F476D0CF8865}|API-Server\\API-Server.csproj|d:\\program\\project\\api-server\\api-server\\controllers\\devicescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{86D2BB77-E0CC-4C10-8F62-F476D0CF8865}|API-Server\\API-Server.csproj|solutionrelative:api-server\\controllers\\devicescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{86D2BB77-E0CC-4C10-8F62-F476D0CF8865}|API-Server\\API-Server.csproj|d:\\program\\project\\api-server\\api-server\\models\\devicesmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{86D2BB77-E0CC-4C10-8F62-F476D0CF8865}|API-Server\\API-Server.csproj|solutionrelative:api-server\\models\\devicesmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{86D2BB77-E0CC-4C10-8F62-F476D0CF8865}|API-Server\\API-Server.csproj|d:\\program\\project\\api-server\\api-server\\models\\dbmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{86D2BB77-E0CC-4C10-8F62-F476D0CF8865}|API-Server\\API-Server.csproj|solutionrelative:api-server\\models\\dbmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{86D2BB77-E0CC-4C10-8F62-F476D0CF8865}|API-Server\\API-Server.csproj|d:\\program\\project\\api-server\\api-server\\models\\usersmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{86D2BB77-E0CC-4C10-8F62-F476D0CF8865}|API-Server\\API-Server.csproj|solutionrelative:api-server\\models\\usersmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{86D2BB77-E0CC-4C10-8F62-F476D0CF8865}|API-Server\\API-Server.csproj|d:\\program\\project\\api-server\\api-server\\entities\\devices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{86D2BB77-E0CC-4C10-8F62-F476D0CF8865}|API-Server\\API-Server.csproj|solutionrelative:api-server\\entities\\devices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{86D2BB77-E0CC-4C10-8F62-F476D0CF8865}|API-Server\\API-Server.csproj|d:\\program\\project\\api-server\\api-server\\entities\\sensorsdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{86D2BB77-E0CC-4C10-8F62-F476D0CF8865}|API-Server\\API-Server.csproj|solutionrelative:api-server\\entities\\sensorsdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{86D2BB77-E0CC-4C10-8F62-F476D0CF8865}|API-Server\\API-Server.csproj|d:\\program\\project\\api-server\\api-server\\models\\dbmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{86D2BB77-E0CC-4C10-8F62-F476D0CF8865}|API-Server\\API-Server.csproj|solutionrelative:api-server\\models\\dbmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{86D2BB77-E0CC-4C10-8F62-F476D0CF8865}|API-Server\\API-Server.csproj|d:\\program\\project\\api-server\\api-server\\entities\\sensors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{86D2BB77-E0CC-4C10-8F62-F476D0CF8865}|API-Server\\API-Server.csproj|solutionrelative:api-server\\entities\\sensors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{86D2BB77-E0CC-4C10-8F62-F476D0CF8865}|API-Server\\API-Server.csproj|d:\\program\\project\\api-server\\api-server\\entities\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{86D2BB77-E0CC-4C10-8F62-F476D0CF8865}|API-Server\\API-Server.csproj|solutionrelative:api-server\\entities\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{86D2BB77-E0CC-4C10-8F62-F476D0CF8865}|API-Server\\API-Server.csproj|d:\\program\\project\\api-server\\api-server\\entities\\devices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{86D2BB77-E0CC-4C10-8F62-F476D0CF8865}|API-Server\\API-Server.csproj|solutionrelative:api-server\\entities\\devices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{86D2BB77-E0CC-4C10-8F62-F476D0CF8865}|API-Server\\API-Server.csproj|d:\\program\\project\\api-server\\api-server\\entities\\plants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{86D2BB77-E0CC-4C10-8F62-F476D0CF8865}|API-Server\\API-Server.csproj|solutionrelative:api-server\\entities\\plants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{86D2BB77-E0CC-4C10-8F62-F476D0CF8865}|API-Server\\API-Server.csproj|d:\\program\\project\\api-server\\api-server\\models\\farmsmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{86D2BB77-E0CC-4C10-8F62-F476D0CF8865}|API-Server\\API-Server.csproj|solutionrelative:api-server\\models\\farmsmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{86D2BB77-E0CC-4C10-8F62-F476D0CF8865}|API-Server\\API-Server.csproj|d:\\program\\project\\api-server\\api-server\\entities\\fertilizers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{86D2BB77-E0CC-4C10-8F62-F476D0CF8865}|API-Server\\API-Server.csproj|solutionrelative:api-server\\entities\\fertilizers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{86D2BB77-E0CC-4C10-8F62-F476D0CF8865}|API-Server\\API-Server.csproj|d:\\program\\project\\api-server\\api-server\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{86D2BB77-E0CC-4C10-8F62-F476D0CF8865}|API-Server\\API-Server.csproj|solutionrelative:api-server\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{86D2BB77-E0CC-4C10-8F62-F476D0CF8865}|API-Server\\API-Server.csproj|d:\\program\\project\\api-server\\api-server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{86D2BB77-E0CC-4C10-8F62-F476D0CF8865}|API-Server\\API-Server.csproj|solutionrelative:api-server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{86D2BB77-E0CC-4C10-8F62-F476D0CF8865}|API-Server\\API-Server.csproj|d:\\program\\project\\api-server\\api-server\\controllers\\maincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{86D2BB77-E0CC-4C10-8F62-F476D0CF8865}|API-Server\\API-Server.csproj|solutionrelative:api-server\\controllers\\maincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{86D2BB77-E0CC-4C10-8F62-F476D0CF8865}|API-Server\\API-Server.csproj|d:\\program\\project\\api-server\\api-server\\controllers\\farmscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{86D2BB77-E0CC-4C10-8F62-F476D0CF8865}|API-Server\\API-Server.csproj|solutionrelative:api-server\\controllers\\farmscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{86D2BB77-E0CC-4C10-8F62-F476D0CF8865}|API-Server\\API-Server.csproj|d:\\program\\project\\api-server\\api-server\\entities\\farms.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{86D2BB77-E0CC-4C10-8F62-F476D0CF8865}|API-Server\\API-Server.csproj|solutionrelative:api-server\\entities\\farms.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -62,159 +58,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "FarmsController.cs",
-              "DocumentMoniker": "D:\\Program\\Project\\API-Server\\API-Server\\Controllers\\FarmsController.cs",
-              "RelativeDocumentMoniker": "API-Server\\Controllers\\FarmsController.cs",
-              "ToolTip": "D:\\Program\\Project\\API-Server\\API-Server\\Controllers\\FarmsController.cs",
-              "RelativeToolTip": "API-Server\\Controllers\\FarmsController.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABEAAAA2AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-30T13:09:40.643Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Devices.cs",
-              "DocumentMoniker": "D:\\Program\\Project\\API-Server\\API-Server\\Entities\\Devices.cs",
-              "RelativeDocumentMoniker": "API-Server\\Entities\\Devices.cs",
-              "ToolTip": "D:\\Program\\Project\\API-Server\\API-Server\\Entities\\Devices.cs",
-              "RelativeToolTip": "API-Server\\Entities\\Devices.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAVAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-28T13:28:28.24Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "DevicesModel.cs",
-              "DocumentMoniker": "D:\\Program\\Project\\API-Server\\API-Server\\Models\\DevicesModel.cs",
-              "RelativeDocumentMoniker": "API-Server\\Models\\DevicesModel.cs",
-              "ToolTip": "D:\\Program\\Project\\API-Server\\API-Server\\Models\\DevicesModel.cs",
-              "RelativeToolTip": "API-Server\\Models\\DevicesModel.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAACkAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-28T10:16:21.477Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Sensors.cs",
-              "DocumentMoniker": "D:\\Program\\Project\\API-Server\\API-Server\\Entities\\Sensors.cs",
-              "RelativeDocumentMoniker": "API-Server\\Entities\\Sensors.cs",
-              "ToolTip": "D:\\Program\\Project\\API-Server\\API-Server\\Entities\\Sensors.cs",
-              "RelativeToolTip": "API-Server\\Entities\\Sensors.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-28T10:08:39.75Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Program\\Project\\API-Server\\API-Server\\Program.cs",
-              "RelativeDocumentMoniker": "API-Server\\Program.cs",
-              "ToolTip": "D:\\Program\\Project\\API-Server\\API-Server\\Program.cs",
-              "RelativeToolTip": "API-Server\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAbAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-15T20:14:45.009Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Fertilizers.cs",
-              "DocumentMoniker": "D:\\Program\\Project\\API-Server\\API-Server\\Entities\\Fertilizers.cs",
-              "RelativeDocumentMoniker": "API-Server\\Entities\\Fertilizers.cs",
-              "ToolTip": "D:\\Program\\Project\\API-Server\\API-Server\\Entities\\Fertilizers.cs",
-              "RelativeToolTip": "API-Server\\Entities\\Fertilizers.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAxAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-13T20:38:03.428Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "FarmsModel.cs",
-              "DocumentMoniker": "D:\\Program\\Project\\API-Server\\API-Server\\Models\\FarmsModel.cs",
-              "RelativeDocumentMoniker": "API-Server\\Models\\FarmsModel.cs",
-              "ToolTip": "D:\\Program\\Project\\API-Server\\API-Server\\Models\\FarmsModel.cs",
-              "RelativeToolTip": "API-Server\\Models\\FarmsModel.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAAAYwAsAAAAjAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-10T15:14:44.805Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Farms.cs",
-              "DocumentMoniker": "D:\\Program\\Project\\API-Server\\API-Server\\Entities\\Farms.cs",
-              "RelativeDocumentMoniker": "API-Server\\Entities\\Farms.cs",
-              "ToolTip": "D:\\Program\\Project\\API-Server\\API-Server\\Entities\\Farms.cs",
-              "RelativeToolTip": "API-Server\\Entities\\Farms.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAvAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-05T13:54:34.749Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "APIController.cs",
-              "DocumentMoniker": "D:\\Program\\Project\\API-Server\\API-Server\\Controllers\\APIController.cs",
-              "RelativeDocumentMoniker": "API-Server\\Controllers\\APIController.cs",
-              "ToolTip": "D:\\Program\\Project\\API-Server\\API-Server\\Controllers\\APIController.cs",
-              "RelativeToolTip": "API-Server\\Controllers\\APIController.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAABQAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-26T12:28:29.58Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Plants.cs",
-              "DocumentMoniker": "D:\\Program\\Project\\API-Server\\API-Server\\Entities\\Plants.cs",
-              "RelativeDocumentMoniker": "API-Server\\Entities\\Plants.cs",
-              "ToolTip": "D:\\Program\\Project\\API-Server\\API-Server\\Entities\\Plants.cs",
-              "RelativeToolTip": "API-Server\\Entities\\Plants.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAArAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-11T14:08:21.291Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
               "Title": "DBModel.cs",
               "DocumentMoniker": "D:\\Program\\Project\\API-Server\\API-Server\\Models\\DBModel.cs",
               "RelativeDocumentMoniker": "API-Server\\Models\\DBModel.cs",
               "ToolTip": "D:\\Program\\Project\\API-Server\\API-Server\\Models\\DBModel.cs",
               "RelativeToolTip": "API-Server\\Models\\DBModel.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAwwBAAAAAeAAAA",
+              "ViewState": "AQIAABQAAAAAAAAAAAAcwCQAAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-26T13:02:04.529Z",
+              "WhenOpened": "2024-05-31T09:43:06.86Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Users.cs",
-              "DocumentMoniker": "D:\\Program\\Project\\API-Server\\API-Server\\Entities\\Users.cs",
-              "RelativeDocumentMoniker": "API-Server\\Entities\\Users.cs",
-              "ToolTip": "D:\\Program\\Project\\API-Server\\API-Server\\Entities\\Users.cs",
-              "RelativeToolTip": "API-Server\\Entities\\Users.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAwAAAA",
+              "DocumentIndex": 5,
+              "Title": "Sensors.cs",
+              "DocumentMoniker": "D:\\Program\\Project\\API-Server\\API-Server\\Entities\\Sensors.cs",
+              "RelativeDocumentMoniker": "API-Server\\Entities\\Sensors.cs",
+              "ToolTip": "D:\\Program\\Project\\API-Server\\API-Server\\Entities\\Sensors.cs",
+              "RelativeToolTip": "API-Server\\Entities\\Sensors.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-26T12:23:11.121Z",
+              "WhenOpened": "2024-05-30T16:32:09.183Z",
               "EditorCaption": ""
             },
             {
@@ -225,9 +94,125 @@
               "RelativeDocumentMoniker": "API-Server\\Models\\UsersModel.cs",
               "ToolTip": "D:\\Program\\Project\\API-Server\\API-Server\\Models\\UsersModel.cs",
               "RelativeToolTip": "API-Server\\Models\\UsersModel.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABkAAAANAAAA",
+              "ViewState": "AQIAAFUAAAAAAAAAAAAIwGIAAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-26T12:18:34.041Z",
+              "WhenOpened": "2024-05-30T16:27:04.512Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DevicesController.cs",
+              "DocumentMoniker": "D:\\Program\\Project\\API-Server\\API-Server\\Controllers\\DevicesController.cs",
+              "RelativeDocumentMoniker": "API-Server\\Controllers\\DevicesController.cs",
+              "ToolTip": "D:\\Program\\Project\\API-Server\\API-Server\\Controllers\\DevicesController.cs",
+              "RelativeToolTip": "API-Server\\Controllers\\DevicesController.cs",
+              "ViewState": "AQIAABkAAAAAAAAAAAAgwA8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-30T13:51:46.605Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "MainController.cs",
+              "DocumentMoniker": "D:\\Program\\Project\\API-Server\\API-Server\\Controllers\\MainController.cs",
+              "RelativeDocumentMoniker": "API-Server\\Controllers\\MainController.cs",
+              "ToolTip": "D:\\Program\\Project\\API-Server\\API-Server\\Controllers\\MainController.cs",
+              "RelativeToolTip": "API-Server\\Controllers\\MainController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-30T13:15:29.265Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "FarmsController.cs",
+              "DocumentMoniker": "D:\\Program\\Project\\API-Server\\API-Server\\Controllers\\FarmsController.cs",
+              "RelativeDocumentMoniker": "API-Server\\Controllers\\FarmsController.cs",
+              "ToolTip": "D:\\Program\\Project\\API-Server\\API-Server\\Controllers\\FarmsController.cs",
+              "RelativeToolTip": "API-Server\\Controllers\\FarmsController.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAAFQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-30T13:09:40.643Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DevicesModel.cs",
+              "DocumentMoniker": "D:\\Program\\Project\\API-Server\\API-Server\\Models\\DevicesModel.cs",
+              "RelativeDocumentMoniker": "API-Server\\Models\\DevicesModel.cs",
+              "ToolTip": "D:\\Program\\Project\\API-Server\\API-Server\\Models\\DevicesModel.cs",
+              "RelativeToolTip": "API-Server\\Models\\DevicesModel.cs",
+              "ViewState": "AQIAAF8AAAAAAAAAAAAAAHIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-28T10:16:21.477Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SensorsData.cs",
+              "DocumentMoniker": "D:\\Program\\Project\\API-Server\\API-Server\\Entities\\SensorsData.cs",
+              "RelativeDocumentMoniker": "API-Server\\Entities\\SensorsData.cs",
+              "ToolTip": "D:\\Program\\Project\\API-Server\\API-Server\\Entities\\SensorsData.cs",
+              "RelativeToolTip": "API-Server\\Entities\\SensorsData.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-28T10:08:39.75Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "FarmsModel.cs",
+              "DocumentMoniker": "D:\\Program\\Project\\API-Server\\API-Server\\Models\\FarmsModel.cs",
+              "RelativeDocumentMoniker": "API-Server\\Models\\FarmsModel.cs",
+              "ToolTip": "D:\\Program\\Project\\API-Server\\API-Server\\Models\\FarmsModel.cs",
+              "RelativeToolTip": "API-Server\\Models\\FarmsModel.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAUwB8AAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-10T15:14:44.805Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Farms.cs",
+              "DocumentMoniker": "D:\\Program\\Project\\API-Server\\API-Server\\Entities\\Farms.cs",
+              "RelativeDocumentMoniker": "API-Server\\Entities\\Farms.cs",
+              "ToolTip": "D:\\Program\\Project\\API-Server\\API-Server\\Entities\\Farms.cs",
+              "RelativeToolTip": "API-Server\\Entities\\Farms.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-05T13:54:34.749Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "D:\\Program\\Project\\API-Server\\API-Server\\Controllers\\UsersController.cs",
+              "RelativeDocumentMoniker": "API-Server\\Controllers\\UsersController.cs",
+              "ToolTip": "D:\\Program\\Project\\API-Server\\API-Server\\Controllers\\UsersController.cs",
+              "RelativeToolTip": "API-Server\\Controllers\\UsersController.cs",
+              "ViewState": "AQIAALUAAAAAAAAAAAAmwMIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-26T12:28:29.58Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Devices.cs",
+              "DocumentMoniker": "D:\\Program\\Project\\API-Server\\API-Server\\Entities\\Devices.cs",
+              "RelativeDocumentMoniker": "API-Server\\Entities\\Devices.cs",
+              "ToolTip": "D:\\Program\\Project\\API-Server\\API-Server\\Entities\\Devices.cs",
+              "RelativeToolTip": "API-Server\\Entities\\Devices.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-28T13:28:28.24Z",
               "EditorCaption": ""
             }
           ]

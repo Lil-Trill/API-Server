@@ -28,7 +28,7 @@ namespace app_example_net_core.Models
                         {
                             Id = Convert.ToInt32(farm.ItemArray[0]),
                             IPAdress = Convert.ToString(farm.ItemArray[1]),
-                            FarmAddress = Convert.ToString(farm.ItemArray[3])
+                            FarmAddress = Convert.ToString(farm.ItemArray[2])
                         }
                       );
 
