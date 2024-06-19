@@ -32,7 +32,16 @@ namespace app_example_net_core.Controllers
             return Ok(allUserFarms);
         }
 
-       
+        [Route("getPlantsFromUsersFarm")]
+        [HttpGet]
+        public ActionResult<IEnumerable<Plants>> GetPlants(int farmID)
+        {
+            if (UsersController.storedUser == null) return StatusCode(200, "Нет пользователя");
+
+            var result = farmModel.GetAllPlantsFromUsersFarm(farmID, UsersController.storedUser.Id);
+            var allPlants = farmModel.AllPlants;
+            return Ok(farmModel.AllPlants);
+        }
 
 
         [HttpPost("insertFarms")]
@@ -89,6 +98,12 @@ namespace app_example_net_core.Controllers
 
             
         }
+
+        //[HttpPut("updatePlants")]
+        //public IActionResult Put()
+        //{
+
+        //}
 
     }
 }

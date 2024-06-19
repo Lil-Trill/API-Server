@@ -10,6 +10,7 @@ namespace app_example_net_core.Models
     {
         DBModel dbModel = new DBModel();
         public List<Farms> AllFarms = new List<Farms>();
+        public List<Plants> AllPlants = new List<Plants>();
 
         public string GetAllUserFarms(int userID)
         {
@@ -38,6 +39,35 @@ namespace app_example_net_core.Models
 
             if (request) return "запрос выполнен успешно";
             else return "Ошибка запроса";
+        }
+
+        public string GetAllPlantsFromUsersFarm(int farmID, int userID)
+        {
+            var checkPlants = dbModel.Connection($"SELECT plant_id, plant_name, height, date_planting, number_sprouts, farm_id, status FROM db_project.users JOIN db_project.users_farms USING(user_id) JOIN db_project.farms USING(farm_id) JOIN db_project.plants_data USING(farm_id) WHERE user_id = {userID} AND farm_id = {farmID} ORDER BY user_id ASC");
+            var table = dbModel.dataTable;
+
+            if (checkPlants && table.Rows.Count != 0)
+            {
+                foreach (DataRow plant in table.Rows)
+                {
+                    AllPlants.Add(
+                        new Plants()
+                        {
+                            ID = Convert.ToInt32(plant.ItemArray[0]),
+                            Name = Convert.ToString(plant.ItemArray[1]),
+                            Height = Convert.ToInt32(plant.ItemArray[2]),
+                            DatePlanted = Convert.ToDateTime(plant.ItemArray[3]),
+                            NumberSprouts = Convert.ToInt32(plant.ItemArray[4]),
+                            FarmID = Convert.ToInt32(plant.ItemArray[5]),
+                            Status = Convert.ToString(plant.ItemArray[6])
+                        }
+                    );
+                }
+            }
+            else if (table.Rows == null) return "У пользователя нет растений";
+            else if (!checkPlants) return "неправильный запрос";
+
+            return "Запрос прошёл успешно";
         }
 
         public string AddFarms(Farms newFarm, int idUser, string farmAddress)
