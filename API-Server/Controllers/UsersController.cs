@@ -49,7 +49,6 @@ namespace API_Server.Controllers
                 return Ok(storedUser);
             }
 
-            storedUser.Id = 0;
             return BadRequest(result);
         }
 
@@ -179,7 +178,7 @@ namespace API_Server.Controllers
             
             
 
-            var result = UserModel.EditUser(changesUser);
+            var result = UserModel.UpdateUser(changesUser);
             if (result && storedUser.DataID == 0) return Ok("все поля кроме полей дополнительной информации были обновлены");
             if (result) return Ok(changesUser);
             else return StatusCode(500, "Что то пошло не так");

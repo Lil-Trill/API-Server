@@ -38,6 +38,7 @@ namespace app_example_net_core.Controllers
             var result = devicesModel.GetTemperatureHumadity(url, sensorID);
 
             //return Ok(result);
+            if (devicesModel.ListData == null) return Ok("Данные не получены");
 
             return Ok(devicesModel.ListData);
         }

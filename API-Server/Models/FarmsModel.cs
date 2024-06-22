@@ -100,5 +100,26 @@ namespace app_example_net_core.Models
 
             return isCreateFertilizer;
         }
+
+        public bool UpdatePlant(Plants changesPlant)
+        {
+            bool request = false;
+            if (changesPlant.Status == null)
+            {
+                request = dbModel.Connection($"UPDATE db_project.plants_data SET\r\n" +
+                $"plant_name = CASE WHEN '{changesPlant.Name}' <> '' THEN '{changesPlant.Name}' ELSE plant_name END,\r\n" +
+                $"height = CASE WHEN '{changesPlant.Height}' <> 0 THEN '{changesPlant.Height}' ELSE height END,\r\n" +
+                $"number_sprouts = CASE WHEN '{changesPlant.NumberSprouts}' <> 0 THEN '{changesPlant.NumberSprouts}' ELSE number_sprouts END,\r\n" +
+                $"WHERE plant_id = {changesPlant.ID};");
+            }
+            request = dbModel.Connection($"UPDATE db_project.plants_data SET\r\n" +
+                $"plant_name = CASE WHEN '{changesPlant.Name}' <> '' THEN '{changesPlant.Name}' ELSE plant_name END,\r\n" +
+                $"height = CASE WHEN '{changesPlant.Height}' <> 0 THEN '{changesPlant.Height}' ELSE height END,\r\n" +
+                $"number_sprouts = CASE WHEN '{changesPlant.NumberSprouts}' <> 0 THEN '{changesPlant.NumberSprouts}' ELSE number_sprouts END,\r\n" +
+                $"status = CASE WHEN {changesPlant.Status} is null THEN '{changesPlant.Status}' ELSE status END\r\n" +
+                $"WHERE plant_id = {changesPlant.ID};");
+
+            return request;
+        }
     }
 }

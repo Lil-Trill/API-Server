@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
+
+
 namespace app_example_net_core.Controllers
 {
     [Route("api/[controller]")]
@@ -14,7 +16,7 @@ namespace app_example_net_core.Controllers
     public class FarmsController : ControllerBase
     {
         private FarmsModel farmModel = new FarmsModel();
-    
+        
 
         //public static List<Users> usersList = UsersModel.GetAllUsers();
         DBModel dbModel = new DBModel();
@@ -99,6 +101,20 @@ namespace app_example_net_core.Controllers
             
         }
 
+        [HttpPut("updatePlant")]
+        public IActionResult Put(int? plantID, string plantName = null, int? height = 0, int? numberSprout = 0, string status = null)
+        {
+            var changesPlant = new Plants();
+
+            changesPlant.ID = plantID;
+            changesPlant.Name = plantName;
+            changesPlant.Height = height;
+            changesPlant.NumberSprouts = numberSprout;
+            changesPlant.Status = status;
+
+            return Ok(farmModel.UpdatePlant(changesPlant));
+        }
+        
         //[HttpPut("updatePlants")]
         //public IActionResult Put()
         //{

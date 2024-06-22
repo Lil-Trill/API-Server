@@ -100,8 +100,6 @@ namespace app_example_net_core.Models
             }
             else return "Данные не были получены.";
 
-            double val = temperatureSensor.Value;
-            string name = temperatureSensor.Name;
             int id = sensorID;
 
             string queryTemperature = $"UPDATE db_project.sensors_data SET value = '{Convert.ToInt32(temperatureSensor.Value)}'::real WHERE name = '{temperatureSensor.Name}' AND sensor_id = 1;";

@@ -91,12 +91,17 @@ namespace API_Server.Models
             else return "произошла ошибка";
         }
 
-        public bool EditUser(Users changesUser)
+        public bool UpdateUser(Users changesUser)
         {
             var request = db.Connection($"UPDATE db_project.users SET \r\n fname = CASE WHEN '{changesUser.FirstName}' <> '' THEN '{changesUser.FirstName}' ELSE fname END,\r\n    lname = CASE WHEN '{changesUser.LastName}' <> '' THEN '{changesUser.LastName}' ELSE lname END,\r\n    midname = CASE WHEN '{changesUser.MiddleName}' <> '' THEN '{changesUser.MiddleName}' ELSE midname END,\r\n    email = CASE WHEN '{changesUser.Email}' <> '' THEN '{changesUser.Email}' ELSE email END,\r\n    password = CASE WHEN '{changesUser.Password}' <> '' THEN '{changesUser.Password}' ELSE password END\r\nWHERE user_id = {changesUser.Id};" +
                 $"\r\n UPDATE db_project.users_data\r\n SET \r\n phone_number = CASE WHEN '{changesUser.PhoneNumber}' <> '' THEN '{changesUser.PhoneNumber}' ELSE phone_number END\r\n WHERE user_id = {changesUser.Id};");
 
             return request;
+        }
+
+        public bool UpdatePlant(Plants changesPlant)
+        {
+            return true;
         }
     }
 }
