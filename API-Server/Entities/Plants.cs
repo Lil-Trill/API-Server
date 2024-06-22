@@ -10,7 +10,6 @@ namespace app_example_net_core.Entities
         public DateTime DatePlanted { get; set; }
         public int? NumberSprouts {  get; set; }
         public int FarmID { get; set; }
-        public string Status { get; set; }
-        public string Variety { get; set; }
+        public string? Status { get; set; }
     }
 }

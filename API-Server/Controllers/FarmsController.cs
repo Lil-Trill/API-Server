@@ -45,6 +45,17 @@ namespace app_example_net_core.Controllers
             return Ok(farmModel.AllPlants);
         }
 
+        [Route("getHistoryPlant")]
+        [HttpGet]
+        public ActionResult<IEnumerable<Plants>> GetHistoryPlant(int plantID)
+        {
+            if (UsersController.storedUser == null) return StatusCode(200, "Нет пользователя");
+
+            farmModel.GetHistoryPlant(plantID);
+            if (farmModel.HisttoryPlant.Count == 0) return Ok("нет растений");
+            return Ok(farmModel.HisttoryPlant);
+        }
+
 
         [HttpPost("insertFarms")]
         public IActionResult Post(int idUser, string ipAddress, string farmAddress)
@@ -77,7 +88,6 @@ namespace app_example_net_core.Controllers
             newPlant.NumberSprouts = numberSprouts;
             newPlant.FarmID = farmID;
             newPlant.Status = status;
-            newPlant.Variety = variety;
 
             var isCreate = farmModel.AddPlants(newPlant);
             if (isCreate) return StatusCode(200, "Растение добавлено в таблицу");
@@ -102,7 +112,7 @@ namespace app_example_net_core.Controllers
         }
 
         [HttpPut("updatePlant")]
-        public IActionResult Put(int? plantID, string plantName = null, int? height = 0, int? numberSprout = 0, string status = null)
+        public IActionResult Put(int? plantID, string plantName = null, int? height = 0, int? numberSprout = 0, string? status = null)
         {
             var changesPlant = new Plants();
 
@@ -115,11 +125,7 @@ namespace app_example_net_core.Controllers
             return Ok(farmModel.UpdatePlant(changesPlant));
         }
         
-        //[HttpPut("updatePlants")]
-        //public IActionResult Put()
-        //{
-
-        //}
+        
 
     }
 }

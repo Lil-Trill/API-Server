@@ -11,7 +11,7 @@ namespace app_example_net_core.Models
         DBModel dbModel = new DBModel();
         public List<Farms> AllFarms = new List<Farms>();
         public List<Plants> AllPlants = new List<Plants>();
-
+        public List<PlantHistory> HisttoryPlant = new List<PlantHistory>();
         public string GetAllUserFarms(int userID)
         {
             string query = $"SELECT farm_id, ip_address, farm_address\r\nFROM db_project.farms\r\nJOIN db_project.users_farms USING(farm_id)\r\nJOIN db_project.users USING(user_id)\r\nWHERE user_id = {userID}\r\nORDER BY farm_id ASC ";
@@ -104,22 +104,43 @@ namespace app_example_net_core.Models
         public bool UpdatePlant(Plants changesPlant)
         {
             bool request = false;
-            if (changesPlant.Status == null)
-            {
-                request = dbModel.Connection($"UPDATE db_project.plants_data SET\r\n" +
-                $"plant_name = CASE WHEN '{changesPlant.Name}' <> '' THEN '{changesPlant.Name}' ELSE plant_name END,\r\n" +
-                $"height = CASE WHEN '{changesPlant.Height}' <> 0 THEN '{changesPlant.Height}' ELSE height END,\r\n" +
-                $"number_sprouts = CASE WHEN '{changesPlant.NumberSprouts}' <> 0 THEN '{changesPlant.NumberSprouts}' ELSE number_sprouts END,\r\n" +
-                $"WHERE plant_id = {changesPlant.ID};");
-            }
             request = dbModel.Connection($"UPDATE db_project.plants_data SET\r\n" +
                 $"plant_name = CASE WHEN '{changesPlant.Name}' <> '' THEN '{changesPlant.Name}' ELSE plant_name END,\r\n" +
                 $"height = CASE WHEN '{changesPlant.Height}' <> 0 THEN '{changesPlant.Height}' ELSE height END,\r\n" +
                 $"number_sprouts = CASE WHEN '{changesPlant.NumberSprouts}' <> 0 THEN '{changesPlant.NumberSprouts}' ELSE number_sprouts END,\r\n" +
-                $"status = CASE WHEN {changesPlant.Status} is null THEN '{changesPlant.Status}' ELSE status END\r\n" +
+                $"status = CASE WHEN '{changesPlant.Status}' <> '' THEN '{changesPlant.Status}' ELSE status END\r\n" +
                 $"WHERE plant_id = {changesPlant.ID};");
 
             return request;
+        }
+
+        public bool GetHistoryPlant(int plantID)
+        {
+            var checkHistory = dbModel.Connection($"SELECT * FROM db_project.plants_data_history\r\n WHERE plant_id = {plantID} \r\nORDER BY history_id ASC ");
+
+            var table = dbModel.dataTable;
+
+            if (table != null)
+            {
+                foreach (DataRow plant in table.Rows)
+                {
+                    HisttoryPlant.Add(
+                        new PlantHistory()
+                        {
+                            ID = Convert.ToInt32(plant.ItemArray[0]),
+                            Height = Convert.ToInt32(plant.ItemArray[1]),
+                            NumberSprouts = Convert.ToInt32(plant.ItemArray[2]),
+                            OldStatus = Convert.ToString(plant.ItemArray[3]),
+                            CurDate = Convert.ToDateTime(plant.ItemArray[4]),
+                            NewStatus = Convert.ToString(plant.ItemArray[6]),
+                            Name = Convert.ToString(plant.ItemArray[7])
+                        }
+                      );
+
+                }
+                return true;
+            }
+            return false;
         }
     }
 }
